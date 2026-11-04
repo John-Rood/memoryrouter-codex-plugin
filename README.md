@@ -13,11 +13,11 @@ No API key and no terminal. The hooks call MemoryRouter over the sign-in you com
 
 ## Install in the Codex app (Mac)
 
-1. Open **Plugins** in the sidebar.
-2. Choose **Add a marketplace** and enter `John-Rood/memoryrouter-codex-plugin`.
-3. Pick the **MemoryRouter** marketplace, open **MemoryRouter**, and click **Install**.
-4. Sign in on the MemoryRouter page that opens (or choose **Create account**; a 14-day trial starts automatically), pick a vault, and click **Authorize**.
-5. Start a **New chat**. Click the hooks icon next to "Ask for approval" in the composer, choose **Review hooks**, and allow the three MemoryRouter hooks. Codex asks once.
+1. Open **Settings** (gear) and go to **Plugins**.
+2. Click **Add**, choose **Add a marketplace**, enter `John-Rood/memoryrouter-codex-plugin`, and click **Add marketplace**.
+3. Open the **Personal** tab, click **MemoryRouter**, and click **Install plugin**.
+4. Sign in on the MemoryRouter page that opens in your browser (or choose **Create account**; a 14-day trial starts automatically), pick a vault, and click **Authorize connection**.
+5. Start a **New chat**. Click the hooks icon (orange dot) next to "Ask for approval" in the composer, choose **Review hooks**, and click **Allow all**. Codex asks once, and again only when the plugin's hooks change.
 
 That's it. Ask "what was I working on?" in any new chat.
 
