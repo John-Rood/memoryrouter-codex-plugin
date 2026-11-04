@@ -1,6 +1,6 @@
 {
   "name": "memoryrouter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Memory across sessions that survives compaction. Codex searches your MemoryRouter vault before each message and saves each finished turn, over your MemoryRouter sign-in.",
   "author": {
     "name": "MemoryRouter",

@@ -1,7 +1,8 @@
 {
   "mcpServers": {
     "memoryrouter": {
-      "url": "https://mcp.memoryrouter.ai/mcp"
+      "url": "https://mcp.memoryrouter.ai/mcp",
+      "scopes": ["memories:read", "memories:write"]
     }
   }
 }

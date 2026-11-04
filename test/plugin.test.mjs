@@ -44,6 +44,9 @@ test('MCP server is the hosted OAuth endpoint under the name the hooks call', ()
   assert.deepEqual(Object.keys(mcp.mcpServers), ['memoryrouter']);
   assert.equal(mcp.mcpServers.memoryrouter.url, 'https://mcp.memoryrouter.ai/mcp');
   assert.equal(mcp.mcpServers.memoryrouter.bearer_token_env_var, undefined);
+  // The server's 401 challenge only names memories:read, so without explicit
+  // scopes Codex signs in read-only and the Stop hook cannot save turns.
+  assert.deepEqual(mcp.mcpServers.memoryrouter.scopes, ['memories:read', 'memories:write']);
 });
 
 test('hooks call hidden MemoryRouter tools over the plugin server, never SessionEnd', () => {
