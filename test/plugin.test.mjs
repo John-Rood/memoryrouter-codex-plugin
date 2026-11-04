@@ -81,13 +81,14 @@ test('hooks match the memoryrouter-codex OAuth installer exactly', async () => {
   assert.deepEqual(hooks, JSON.parse(JSON.stringify(groups)));
 });
 
-test('skill carries the recall rule and copy rules', () => {
+test('skill carries John\'s universal instructions verbatim and copy rules', () => {
   const skill = read('plugins/memoryrouter/skills/memoryrouter/SKILL.md');
   assert.match(skill, /^---\nname: memoryrouter\ndescription: /);
-  assert.match(skill, /Do not search again/);
-  assert.match(skill, /call `search_memories` before answering/);
-  assert.match(skill, /Skip MemoryRouter for general questions/);
-  assert.match(skill, /never saved/);
+  const canonical = read('test/canonical-instructions.txt').trim();
+  assert.ok(skill.includes(canonical), 'canonical instructions must appear verbatim');
+  assert.match(skill, /RETRIEVE\n/);
+  assert.match(skill, /STORE\n/);
+  assert.match(skill, /never saved by the hooks/);
   for (const f of ['plugins/memoryrouter/skills/memoryrouter/SKILL.md', 'plugins/memoryrouter/.codex-plugin/plugin.json', 'plugins/memoryrouter/hooks/hooks.json', 'README.md']) {
     assert.doesNotMatch(read(f), /\u2014/, `${f} has an em dash`);
   }
