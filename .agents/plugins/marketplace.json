@@ -1,0 +1,20 @@
+{
+  "name": "memoryrouter",
+  "interface": {
+    "displayName": "MemoryRouter"
+  },
+  "plugins": [
+    {
+      "name": "memoryrouter",
+      "source": {
+        "source": "local",
+        "path": "./plugins/memoryrouter"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

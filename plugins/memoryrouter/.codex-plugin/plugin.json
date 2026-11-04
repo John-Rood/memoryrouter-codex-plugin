@@ -1,0 +1,36 @@
+{
+  "name": "memoryrouter",
+  "version": "1.0.0",
+  "description": "Memory across sessions that survives compaction. Codex searches your MemoryRouter vault before each message and saves each finished turn, over your MemoryRouter sign-in.",
+  "author": {
+    "name": "MemoryRouter",
+    "email": "hello@memoryrouter.ai",
+    "url": "https://memoryrouter.ai"
+  },
+  "homepage": "https://memoryrouter.ai/codex",
+  "repository": "https://github.com/John-Rood/memoryrouter-codex-plugin",
+  "license": "MIT",
+  "keywords": ["memory", "persistent-memory", "mcp", "codex", "context", "recall", "compaction"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "hooks": "./hooks/hooks.json",
+  "interface": {
+    "displayName": "MemoryRouter",
+    "shortDescription": "Memory across every Codex chat",
+    "longDescription": "MemoryRouter gives Codex memory across sessions that survives compaction. After you sign in, Codex searches your MemoryRouter vault before each message and adds what it finds as context, then saves the turn: your message and the final reply only, never tool calls, tool output or intermediate steps. The same vault works in ChatGPT, Claude and Claude Code, so a decision made in one tool is there in the next. Start a new chat and pick up where you left off.",
+    "developerName": "MemoryRouter",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://memoryrouter.ai",
+    "privacyPolicyURL": "https://memoryrouter.ai/privacy",
+    "termsOfServiceURL": "https://memoryrouter.ai/terms",
+    "defaultPrompt": [
+      "What was I working on last time?",
+      "What did we decide about this project?",
+      "Which MemoryRouter vault am I connected to?"
+    ],
+    "brandColor": "#4F7DF3",
+    "composerIcon": "./assets/composer-icon.png",
+    "logo": "./assets/logo.png"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "memoryrouter": {
+      "url": "https://mcp.memoryrouter.ai/mcp"
+    }
+  }
+}

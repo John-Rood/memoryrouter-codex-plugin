@@ -1,0 +1,48 @@
+{
+  "description": "MemoryRouter every-turn memory. Calls the plugin's own memoryrouter MCP server over your MemoryRouter sign-in: recall before each message, save the message and the final reply after it. No API key, no local scripts.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "mcp_tool",
+            "server": "memoryrouter",
+            "tool": "codex_session_start",
+            "input": { "session_id": "${session_id}", "cwd": "${cwd}", "source": "${source}" },
+            "timeout": 12,
+            "statusMessage": "Recalling MemoryRouter context"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "mcp_tool",
+            "server": "memoryrouter",
+            "tool": "codex_turn_start",
+            "input": { "prompt": "${prompt}", "session_id": "${session_id}", "turn_id": "${turn_id}", "cwd": "${cwd}" },
+            "timeout": 12,
+            "statusMessage": "Searching MemoryRouter"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "mcp_tool",
+            "server": "memoryrouter",
+            "tool": "codex_turn_end",
+            "input": { "last_assistant_message": "${last_assistant_message}", "session_id": "${session_id}", "turn_id": "${turn_id}", "cwd": "${cwd}" },
+            "timeout": 15,
+            "statusMessage": "Saving to MemoryRouter"
+          }
+        ]
+      }
+    ]
+  }
+}
